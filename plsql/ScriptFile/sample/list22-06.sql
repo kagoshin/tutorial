@@ -1,0 +1,1 @@
+SELECT type_name,typecode FROM user_types;

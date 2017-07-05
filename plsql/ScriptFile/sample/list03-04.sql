@@ -1,0 +1,14 @@
+DECLARE
+  var NUMBER := 15;
+BEGIN
+  IF var < 10 THEN
+    DBMS_OUTPUT.PUT_LINE('値は10より小さい');
+  ELSIF var < 20 THEN
+    DBMS_OUTPUT.PUT_LINE('値は20より小さい');
+  ELSIF var < 30 THEN
+    DBMS_OUTPUT.PUT_LINE('値は30より小さい');
+  ELSE
+    DBMS_OUTPUT.PUT_LINE('それ以外');
+  END IF;
+END;
+/

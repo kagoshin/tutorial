@@ -1,0 +1,10 @@
+CREATE OR REPLACE TRIGGER pipe_sent
+AFTER DELETE ON dept
+DECLARE
+  stat INTEGER;
+BEGIN
+  DBMS_PIPE.RESET_BUFFER;
+  DBMS_PIPE.PACK_MESSAGE('DEPTï\ÇÃçsÇ™çÌèúÇ≥ÇÍÇ‹ÇµÇΩÅB');
+  stat:=DBMS_PIPE.SEND_MESSAGE('mod_pipe',30);
+END;
+/

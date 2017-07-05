@@ -1,0 +1,10 @@
+DECLARE
+  var NUMBER := 10;
+BEGIN
+  IF var = 10 THEN
+    DBMS_OUTPUT.PUT_LINE('’l‚Í10');
+  ELSE
+    DBMS_OUTPUT.PUT_LINE('’l‚Í10ˆÈŠO');
+  END IF;
+END;
+/

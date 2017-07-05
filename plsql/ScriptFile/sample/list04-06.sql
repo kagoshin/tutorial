@@ -1,0 +1,1 @@
+SELECT * FROM dept WHERE deptno = &•”–å”Ô†;
