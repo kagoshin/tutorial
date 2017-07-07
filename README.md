@@ -1,7 +1,7 @@
 # tutorial
 tutorial
 
-＃ DB tool login
+＃ db tool login
 
 hostname: localhost
 
@@ -15,5 +15,14 @@ password: oracle
 
 Password for SYS & SYSTEM
 
+# sqlplus login
+
+ssh root@localhost -p 49160
+password: admin
+
+sqlplus system/oracle@localhost/xe
+
 # ref
 https://hub.docker.com/r/wnameless/oracle-xe-11g/
+
+https://simple-it-life.com/2016/05/15/oracle-docker/
