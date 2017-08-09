@@ -18,6 +18,7 @@ Password for SYS & SYSTEM
 # sqlplus login
 
 ssh root@localhost -p 49160
+
 password: admin
 
 sqlplus system/oracle@localhost/xe
