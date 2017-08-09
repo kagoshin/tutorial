@@ -23,6 +23,10 @@ password: admin
 
 sqlplus system/oracle@localhost/xe
 
+# directory object
+
+/u01/dirobj
+
 # ref
 https://hub.docker.com/r/wnameless/oracle-xe-11g/
 
