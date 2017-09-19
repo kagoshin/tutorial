@@ -8,6 +8,6 @@ BEGIN
   END IF;
 EXCEPTION
   WHEN err THEN
-    DBMS_OUTPUT.PUT_LINE('ƒ†[ƒU[’è‹`—áŠOI');
+    DBMS_OUTPUT.PUT_LINE('ä¾‹å¤–ãŒç™ºç”Ÿ');
 END;
 /
