@@ -1,6 +1,6 @@
 #!/bin/bash
 
-IFS=$'\t'
+IFS=$'  '
 
 while read LINE; do
   tsvList=(`echo "$LINE"`)
