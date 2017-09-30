@@ -1,0 +1,13 @@
+String name = 'John'
+
+String title = "Project: ${project.name}"
+
+String title = "Project: $name"
+
+String greet = '''********
+* Hello *
+*********'''
+
+String banner = """################
+# ${new Date().toGMTString()} #
+###############""" 
