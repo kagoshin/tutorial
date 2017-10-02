@@ -1,0 +1,5 @@
+// (1) helloタスクを定義
+task hello << {
+  // (2) タスクに追加する処理
+  println 'Hello Gradle world!'
+}

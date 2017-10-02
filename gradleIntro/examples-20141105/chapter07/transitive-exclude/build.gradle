@@ -1,0 +1,29 @@
+repositories {
+  mavenCentral()
+}
+
+configurations {
+  conf1
+  testConf1.extendsFrom conf1 // testConf1はconfの依存関係も含む
+}
+
+configurations.testConf1 {
+  resolutionStrategy {
+    failOnVersionConflict()  // Fail戦略を採用する
+  }
+}
+
+dependencies {
+  conf1 group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.3.1'
+  testConf1(group: 'org.spockframework', name: 'spock-core', version: '0.7-groovy-2.0') {
+    exclude module: 'groovy-all' // groovy-all は無視する
+  }
+}
+
+task showDeps << {
+  // Groovyはバージョン2.3.1だけが残り、バージョンの競合は解決された
+  configurations.testConf1.each {
+    println it.absolutePath
+  }
+}
+

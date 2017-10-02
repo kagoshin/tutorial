@@ -1,0 +1,22 @@
+<project name="sample-ant-project" default="jar" basedir=".">
+    <description>
+        Javaソースをコンパイルしてjarファイルを作成します。
+    </description>
+
+    <!-- Ant側のプロジェクトプロパティ -->
+    <property name="version" value="0.1" />
+    <property name="src" location="src" />
+    <property name="build" location="build" />
+    <property name="dist"  location="dist" />
+
+    <target name="compile" description="ソースファイルのコンパイル">
+        <mkdir dir="${build}" />
+        <javac srcdir="${src}" destdir="${build}" includeantruntime="false" />
+    </target>
+
+    <target name="jar" depends="compile" description="jarファイルを作成します">
+        <mkdir dir="${dist}/lib" />
+        <jar jarfile="${dist}/lib/${ant.project.name}-${version}.jar" basedir="${build}" />
+    </target>
+</project>
+

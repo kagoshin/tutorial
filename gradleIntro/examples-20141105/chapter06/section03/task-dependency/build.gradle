@@ -1,0 +1,40 @@
+task todo << {
+     println '未着手。'
+}
+
+task doing << {
+    println '仕掛かり中。'
+}
+
+task done << {
+    println '完了。'
+}
+
+doing.dependsOn todo
+done.dependsOn doing
+
+
+task reviewing << {
+    println 'レビュー中。'
+}
+
+// 複数のタスクに依存する場合
+/*
+task done(dependsOn: [doing, reviewing]) << {
+    println '完了。'
+}
+*/
+
+// クロージャを使用した場合
+/*
+done.dependsOn {
+  [doing, reviewing]
+}
+*/
+
+// パターンに一致したものを依存関係にする場合
+/*
+done.dependsOn {
+    tasks.findAll { task -> task.name ==~ /.*ing/ }
+}
+*/

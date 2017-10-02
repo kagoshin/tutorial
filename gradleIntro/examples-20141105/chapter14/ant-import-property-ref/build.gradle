@@ -1,0 +1,24 @@
+version = "1.1"
+
+ant.importBuild "build.xml"
+
+ant.properties.version = version // build.xmlのversionプロパティを上書き
+
+task war(type: War, dependsOn: "jar") { // build.xmlのjarターゲットを参照
+    description = "warファイルを作成します"
+
+    baseName = "ant-sample" // warファイルの名前
+    version = project.version // ファイル名に付加されるバージョン
+
+    destinationDir = file("dist")// warファイル出力先
+
+    // warの構成
+    from("web") {
+        include("index.html")
+    }
+    // build.xmlのプロパティを参照
+    classpath("${ant.properties.dist}/lib/${ant.project.name}-${version}.jar")
+    webInf {
+        from ("web/WEB-INF")
+    }
+}

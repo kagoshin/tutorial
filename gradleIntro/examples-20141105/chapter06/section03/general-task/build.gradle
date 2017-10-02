@@ -1,0 +1,23 @@
+task myCopy(type: Copy) {
+    from 'original'
+    into 'target'
+}
+
+task myCopyExtension(type: Copy) {
+    from 'original'
+    into 'target'
+
+    File newFile = file('original/newFile.txt')
+    doFirst {
+      println 'コピー元のファイルに書き込みします。'
+      newFile.write('コピー用のファイルです。','UTF-8')
+    }
+    doLast {
+      File copied = file('original/newFile_copied.txt')
+      if(newFile.renameTo(copied)) {
+        println 'コピーが完了しました。'
+      } else {
+        println 'コピーできませんでした。'
+      }
+    }
+}

@@ -1,0 +1,20 @@
+apply plugin: "application"
+mainClassName = "com.example.Client"
+
+apply plugin: "java"
+
+repositories {
+  // com.example:my-bintray-module:0.1の依存ライブラリを取得する先
+  jcenter()
+
+  // com.example:my-bintray-module:0.1を取得する先
+  maven {
+    // http://dl.bintray.com/<アカウント名>/<リポジトリ名>
+    url "http://dl.bintray.com/gradle-book/test1"
+  }
+}
+
+dependencies {
+  compile "com.example:my-bintray-module:0.1"
+}
+

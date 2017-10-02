@@ -1,0 +1,6 @@
+logger.error 'エラーメッセージ'
+logger.quiet '重要なメッセージ'
+logger.warn '警告メッセージ'
+logger.lifecycle 'ビルドの進行状況を示すメッセージ'
+logger.info 'インフォメーションメッセージ'
+logger.debug 'デバッグメッセージ'

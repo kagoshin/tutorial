@@ -1,0 +1,14 @@
+defaultTasks 'showProjectName'
+
+// 複数タスクを指定する場合
+//defaultTasks = ['showProjectName','showDescription']
+
+project.description = 'デフォルトタスクの説明のためのプロジェクトです。'
+
+task showProjectName << {
+	println project.name
+}
+
+task showDescription << {
+	println project.description
+}

@@ -1,0 +1,34 @@
+// (1) Tomcatプラグイン利用のための設定
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath 'com.bmuschko:gradle-tomcat-plugin:2.0'
+  }
+}
+
+//apply plugin: 'java'
+// (2) Warプラグイン適用
+apply plugin: 'war'
+// (3) Tomcatプラグイン適用
+apply plugin: 'com.bmuschko.tomcat'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  // (4) 依存関係にJava EE 6のAPIを追加
+  providedCompile 'javax:javaee-web-api:6.0'
+  compile 'org.slf4j:slf4j-api:1.7.5'
+  testCompile 'junit:junit:4.11'
+
+  // (5) Tomcat実行に必要な依存ライブラリの設定
+  def tomcatVersion = '7.0.52'
+    tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+           "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}"
+    tomcat("org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}") {
+      exclude group: 'org.eclipse.jdt.core.compiler', module: 'ecj'
+  }
+}

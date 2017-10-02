@@ -1,0 +1,46 @@
+apply plugin: "java"
+apply plugin: "maven-publish"
+
+group = "com.example"
+version = 0.1
+
+// ...
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  runtime "org.apache.commons:commons-lang3:3.3.1"
+}
+
+publishing { // 公開設定
+  publications {
+    mod1(MavenPublication) {
+      from components.java
+      artifactId = "my-maven-mod1" // 未指定の場合は project.name が使用される
+      groupId = "com.example.maven" // 未指定の場合は project.group が使用される
+      version = "0.1-a" // 未指定の場合は project.version が使用される
+
+      pom.withXml { xml ->
+        final myPom = {
+          packaging "jar"
+          nama "My Sample Project"
+          description "サンプルプロジェクト バージョン$version"
+          licenses {
+            license {
+              name "The Apache Software License, Version 2.0"
+              url "http://www.apache.org/licenses/LICENSE-2.0.txt"
+              distribution "repo"
+            }
+          }
+        }
+        // description などプロジェクトのプロパティと被ったときの対策
+        myPom.resolveStrategy = Closure.DELEGATE_FIRST
+
+        xml.asNode().children().last() + myPom
+      }
+    }
+  }
+}
+

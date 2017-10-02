@@ -1,0 +1,43 @@
+apply plugin: "java"
+apply plugin: "maven-publish" // Maven Publishプラグインを適用
+
+//..
+
+group = "com.example"
+version = 0.1
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  runtime "org.apache.commons:commons-lang3:3.3.1"
+}
+
+task sourceJar(type: Jar) {
+  from sourceSets.main.allJava // ソースセットを入力ファイルに設定
+}
+
+publishing { // 公開設定
+  publications {
+    mod1(MavenPublication) { // <mod1>は任意のモジュール識別名
+      from components.java // ソフトウェアコンポーネント「java」を公開対象に指定する
+      // artifact()メソッドで公開するアーカイブやファイルを指定する
+      artifact sourceJar {
+        classifier "sources"
+      }
+    }
+  }
+
+  repositories {
+    maven {
+      name "local1" // リポジトリ名。省略した場合は「maven」
+      url "build/repo1" // ディレクトリを指定
+    }
+    maven {
+      name "remote1" // リポジトリ名。省略した場合は「maven」
+      url "http://localhost:8081/artifactory/repo1" // リポジトリのURLを指定
+    }
+  }
+}
+

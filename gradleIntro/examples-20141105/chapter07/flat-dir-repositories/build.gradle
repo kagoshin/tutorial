@@ -1,0 +1,26 @@
+// build.gradle
+
+configurations {
+  conf1
+}
+
+repositories {
+    flatDir {
+        // プロジェクトディレクトリのlibs、doc-repoディレクトリをリポジトリに指定する
+        dirs "libs", "doc-repo"
+    }
+}
+
+dependencies {
+  conf1 group: "org.slf4j", name: "slf4j-api", version: "1.7.5"
+  conf1 group: "junit", name: "junit", version: "4.11"
+  conf1 name: "index", ext: "html"
+}
+
+task showDeps << {
+  // conf1に設定された依存関係のファイルパスを全て出力する
+  configurations.conf1.each {
+    println it.absolutePath
+  }
+}
+

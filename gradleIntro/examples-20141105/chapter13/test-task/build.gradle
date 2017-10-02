@@ -1,0 +1,3 @@
+task myTask(type: MyTask) { // スクリプト評価フェーズ（Taskオブジェクト作成時）に実行
+  target = "world"
+}

@@ -1,0 +1,55 @@
+buildscript {
+  repositories {
+    jcenter()
+ }
+ dependencies {
+   // bintrayプラグインを利用可能にする
+   classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:0.5"
+ }
+}
+
+apply plugin: "com.jfrog.bintray" // bintrayプラグインを適用
+
+apply plugin: "java"
+apply plugin: "maven-publish"
+
+group = "com.example"
+version = 0.1
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile "org.apache.commons:commons-lang3:3.3.1"
+}
+
+task sourceJar(type: Jar) {
+  from sourceSets.main.allJava // ソースセットを入力ファイルに設定
+}
+
+publishing {
+  publications {
+    mod1(MavenPublication) { // モジュール定義
+      artifactId "my-bintray-module"
+
+      from components.java // ソフトウェアコンポーネント「java」をモジュールに指定する
+      // artifact()メソッドで公開するアーカイブやファイルを指定する
+      artifact sourceJar {
+        classifier "sources"
+      }
+    }
+  }
+}
+
+bintray {
+  user = project.has("bintrayUser") ? bintrayUser : "" // Bintray アカウント名
+  key = project.has("bintrayKey") ? bintrayKey : "" // Bintray APIキー
+  publications = ["mod1"] // Bintrayへアップロードするモジュール
+  publish = true
+  pkg {  // アップロード先のBintrayパッケージ情報
+    repo = "test1"
+    name = "my-pkg"
+  }
+}
+

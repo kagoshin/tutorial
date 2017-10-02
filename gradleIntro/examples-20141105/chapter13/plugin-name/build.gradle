@@ -1,0 +1,5 @@
+apply plugin: "greeting" // カスタムプラグインを適用
+
+greeting { // GreetingPluginにより追加されたgreetingブロック
+  message("Hi", "world")
+}

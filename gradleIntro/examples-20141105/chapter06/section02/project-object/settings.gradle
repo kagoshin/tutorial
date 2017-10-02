@@ -1,0 +1,12 @@
+include 'child'
+
+gradle.allprojects { project ->
+    if(project.name == 'methods-desc') {
+        project.beforeEvaluate {
+            println project.name + 'プロジェクトを評価します。'
+        }
+        project.afterEvaluate {
+            println project.name + 'プロジェクトを評価しました。'
+        }
+    }
+}

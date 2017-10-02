@@ -1,0 +1,46 @@
+apply plugin: "java"
+apply plugin: "maven-publish" // maven-publishプラグインを適用
+apply plugin: "ivy-publish" // maven-publishプラグインを適用
+
+//...
+
+group = "com.example"
+version = 0.1
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  runtime "org.apache.commons:commons-lang3:3.3.1"
+}
+
+task sourceJar(type: Jar) {
+  classifier 'sources'
+  from sourceSets.main.allJava // ソースセットを入力ファイルに設定
+}
+task javadocJar(type: Jar, dependsOn: javadoc) {
+  classifier 'javadoc'
+  from javadoc.destinationDir
+}
+
+publishing {
+  publications {
+    pub1(IvyPublication) { // <pub1>は任意の公開名
+      from components.java // ソフトウェアコンポーネント「java」を公開対象に指定する
+      // artifact()メソッドで公開するアーカイブやファイルを指定する
+      artifact(sourceJar) // タスク名を指定すると、タスクによる出力ファイルが公開される
+      artifact(javadocJar)
+    }
+  }
+  repositories {
+    ivy {
+      url "sftp://localhost:22/tmp/repository"
+      credentials {
+        username 'masatoshi_hayashi'
+        password 'D1ddlddl'
+      }
+    }
+  }
+}
+

@@ -1,0 +1,23 @@
+task normalTask << {
+    println name
+}
+
+task finalizerTask << {
+    println name
+}
+
+task problemTask << {
+    throw new Exception('exception')
+}
+  
+task executionTask << { println name }
+
+normalTask.finalizedBy finalizerTask
+
+// finalizerTaskは実行される
+//problemTask.dependsOn normalTask
+//executionTask.dependsOn problemTask
+
+// finalizerTaskは実行されない
+normalTask.dependsOn problemTask
+executionTask.dependsOn normalTask

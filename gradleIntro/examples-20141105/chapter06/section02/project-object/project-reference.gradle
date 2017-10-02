@@ -1,0 +1,9 @@
+def childInstance = project(':child')
+childInstance.description = '子プロジェクトの説明を設定します。'
+
+// オーバーロードメソッドの場合
+/*
+project(':child') {
+    description = '子プロジェクトの説明を設定します。'
+}
+*/

@@ -1,0 +1,14 @@
+// ビルド比較プラグインの適用
+apply plugin: 'compare-gradle-builds'
+
+compareGradleBuilds { // ビルド比較プラグインの設定ブロック
+  sourceBuild { // 比較元ビルド
+    projectDir "project-a" // ビルドのルートディレクトリ
+    gradleVersion "1.12"   // ビルドに使用するGradleバージョン
+  }
+  targetBuild { // 比較先ビルド
+    projectDir "project-b" // ビルドのルートディレクトリ
+    gradleVersion "2.0"    // ビルドに使用するGradleバージョン
+  }
+}
+

@@ -1,0 +1,42 @@
+apply plugin: "java"
+apply plugin: "ivy-publish" // Ivy Publishプラグインを適用
+
+//..
+
+group = "com.example"
+version = 0.1
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  runtime "org.apache.commons:commons-lang3:3.3.1"
+}
+
+task sourceJar(type: Jar) {
+  from sourceSets.main.allJava // ソースセットを入力ファイルに設定
+}
+
+publishing { // 公開設定
+  publications {
+    mod1(IvyPublication) { // <mod1>は任意のモジュール識別名
+      from components.java // ソフトウェアコンポーネント「java」を公開対象に指定する
+      // artifact()メソッドで公開するアーカイブやファイルを指定する
+      artifact sourceJar {
+        classifier "sources"
+      }
+    }
+  }
+
+  repositories {
+    ivy {
+      credentials {
+        username 'my-name'
+        password 'xxxxxx'
+      }
+      url "sftp://localhost:22/tmp/repo1" // sftpスキームでリポジトリを定義
+    }
+  }
+}
+

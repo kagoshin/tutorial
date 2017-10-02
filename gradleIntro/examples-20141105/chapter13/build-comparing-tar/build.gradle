@@ -1,0 +1,18 @@
+// ビルド比較プラグインの適用
+apply plugin: 'compare-gradle-builds'
+
+compareGradleBuilds { // ビルド比較プラグインの設定ブロック
+  sourceBuild { // 比較元ビルド(ソースビルド)
+    projectDir = "source-build" // ビルドのルートディレクトリ
+    gradleVersion = "1.12"   // ビルドに使用するGradleバージョン
+    tasks = ["docsTar"] // ビルドで実行するタスク
+    arguments = ["-PdocsVersion=0.2"] // ビルド時のコマンドライン引数
+  }
+  targetBuild { // 比較先ビルド(ターゲットビルド)
+    projectDir = "source-build" // ビルドのルートディレクトリ
+    gradleVersion = "2.0"    // ビルドに使用するGradleバージョン
+    tasks = ["docsTar"] // ビルドで実行するタスク
+    arguments = ["-PdocsVersion=0.2"] // ビルド時のコマンドライン引数
+  }
+}
+

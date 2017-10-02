@@ -1,0 +1,30 @@
+repositories {
+  mavenCentral()
+}
+
+configurations {
+  conf1
+  testConf1.extendsFrom conf1 // testConf1はconfの依存関係も含む
+}
+
+configurations.testConf1 { // コンフィグレーションtestConf1の設定
+  resolutionStrategy {
+    failOnVersionConflict()  // Fail戦略を採用する
+    force 'org.hamcrest:hamcrest-core:1.3' // testConf1でHamcrestが要求されたら必ずバージョン1.3を使う
+  }
+}
+
+dependencies {
+  conf1(group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.3.1') {
+    force = true // バージョンが競合したら必ずこの依存関係を使う
+  }
+  testConf1(group: 'org.spockframework', name: 'spock-core', version: '0.7-groovy-2.0')
+}
+
+task showDeps << {
+  // バージョンの競合は全て解決され、ビルドに成功する
+  configurations.testConf1.each {
+    println it.absolutePath
+  }
+}
+

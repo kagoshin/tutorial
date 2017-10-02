@@ -1,0 +1,13 @@
+task myTask(type: MyTask) { // スクリプト評価フェーズ（Taskオブジェクト作成時）に実行
+  target = "world"
+}
+
+class MyTask extends DefaultTask {
+  String target
+  MyTask() {
+    this << {
+      println "Hello, $target!" // スクリプト実行フェーズに実行
+    }
+  }
+}
+

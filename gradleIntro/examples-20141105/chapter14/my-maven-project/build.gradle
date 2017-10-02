@@ -1,0 +1,19 @@
+// 生成されるbuild.gradle
+
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'com.example' // <- pom.xmlのgroupId要素から
+version = '1.0-SNAPSHOT' // <- pom.xmlのversion要素から
+
+description = """My sample maven project""" // <- pom.xmlのname要素から
+
+sourceCompatibility = 1.5
+targetCompatibility = 1.5
+
+repositories {
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+dependencies {
+    testCompile group: 'junit', name: 'junit', version:'3.8.1'
+}

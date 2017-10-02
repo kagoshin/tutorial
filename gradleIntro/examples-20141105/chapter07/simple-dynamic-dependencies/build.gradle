@@ -1,0 +1,28 @@
+configurations {
+  conf1
+}
+
+repositories {
+  mavenCentral()
+  maven {
+      url "http://repository.apache.org/content/groups/snapshots"
+  }
+}
+
+// conf1コンフィグレションの動的バージョンのキャッシュ間隔を調整
+configurations.conf1.resolutionStrategy.cacheDynamicVersionsFor 1, 'minutes'
+// conf1コンフィグレションの変更性モジュールのキャッシュ間隔を調整
+configurations.conf1.resolutionStrategy.cacheChangingModulesFor 5, 'hours'
+
+dependencies {
+  conf1 'org.slf4j:slf4j-api:1.7.+' // 1.7系のうち最新版を取得
+  conf1 'commons-cli:commons-cli:latest.integration' // 不安定版も含めて最新版を取得
+  conf1 'junit:junit:latest.release' // 安定版の最新版を取得
+}
+
+task showDeps << {
+  configurations.conf1.each {
+    println it.absolutePath
+  }
+}
+

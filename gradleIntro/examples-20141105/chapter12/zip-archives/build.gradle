@@ -1,0 +1,17 @@
+task docsZip(type: Zip) {
+  // タスクの設定（zipファイル出力先、圧縮レベルなど）
+  baseName = "project-docs"
+  entryCompression = ZipEntryCompression.STORED
+
+  // アーカイブの構成
+  // 「docs」エントリに「src/dist」ディレクトリとembedded.zipからhtml、css、jsファイルを全て追加
+  into ("docs") {
+    from (zipTree("src/dist/embedded.zip")) {
+      include "**/*.html", "**/*.css", "**/*.js"
+    }
+    from ("src/dist") {
+      include "**/*.html", "**/*.css", "**/*.js"
+    }
+  }
+}
+

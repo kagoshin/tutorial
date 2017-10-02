@@ -1,0 +1,20 @@
+// build.gradle
+buildscript {
+  repositories {
+    flatDir dir: "lib" // lib/mycompany-gradle-tasks-1.0.jarにライブラリを配置
+  }
+  dependencies {
+    classpath "com.example:mycompany-gradle-tasks:1.0"
+  }
+}
+
+apply plugin: "war"
+
+import com.example.mycompany.gradle.tasks.Deploy
+
+task deploy(type: Deploy) {
+  description = "カスタムタスクでWarをデプロイします"
+
+  url "http://mycompany-server.example.com"
+}
+

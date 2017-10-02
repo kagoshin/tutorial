@@ -1,0 +1,33 @@
+task docsZip(type: Zip) {
+  // アーカイブ内のdocs-1ディレクトリに出力する
+  into "docs-1"
+  // base.cssをアーカイブ対象にする
+  include "**/base.css"
+  // 空ディレクトリはアーカイブに含めない
+  includeEmptyDirs = false
+
+  // アーカイブ内のrelease-noteディレクトリに
+  into("release-notes") {
+    // docsディレクトリから
+    from "docs"
+    // release-note.htmlをアーカイブする
+    include "release-note.html"
+  }
+
+  // アーカイブ内のuserguideディレクトリに
+  into("userguide") {
+    // docsディレクトリの
+    from("docs") {
+      // HTMLファイルをアーカイブする
+      include "**/*.html"
+      // ただしリリースノートはこのディレクトリに含めない
+      exclude "release-note.html"
+    }
+    // sampleディレクトリの
+    from("sample") {
+      // Javaファイルをアーカイブする
+      include "**/*.java"
+    }
+  }
+}
+

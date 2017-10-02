@@ -1,0 +1,24 @@
+apply plugin: "java"
+apply plugin: "ivy-publish" // Ivy Publishプラグインを適用
+
+// ...
+
+group = "com.example"
+version = 0.1
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  runtime "org.apache.commons:commons-lang3:3.3.1"
+}
+
+publishing { // 公開設定
+  publications {
+    mod1(IvyPublication) { // <mod1>は任意のモジュール識別名
+      from components.java // ソフトウェアコンポーネント「java」を公開対象に指定する
+    }
+  }
+}
+

@@ -1,0 +1,44 @@
+task hello << {
+    println name + ': Hello Gradle world!'
+}
+
+task hello2 {
+    println name + ': Hello Gradle world!'
+}
+
+task showDescription << {
+    println description
+}
+showDescription.description = 'showDescriptionタスクです。'
+
+// これはエラーとなります。
+/*
+task showDescription2.description = 'showDescription2タスクです。'
+showDescription2 << {
+    println description
+}
+*/
+
+task showDescription3
+showDescription3.description = 'showDescription3タスクです。'
+showDescription3 << {
+    println description
+}
+
+task showDescription4 {
+	description = 'showDescription4タスクです。'
+	doLast {
+	    println description
+	}
+}
+
+task showDescription5(description: 'showDescription5タスクです。') << {
+    println description
+}
+
+task(showDescription6, description: 'showDescription6タスクです。') << {
+    println description
+}
+
+
+

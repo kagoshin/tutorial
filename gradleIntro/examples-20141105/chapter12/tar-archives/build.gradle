@@ -1,0 +1,15 @@
+task docsTar(type: Tar) {
+  baseName = "project-docs"
+  compression = Compression.BZIP2 // 圧縮方法の設定
+
+  // アーカイブの構成
+  into ("docs") {
+    from (zipTree("src/dist/embedded.zip")) {
+      include "**/*.html", "**/*.css", "**/*.js"
+    }
+    from ("src/dist") {
+      include "**/*.html", "**/*.css", "**/*.js"
+    }
+  }
+}
+

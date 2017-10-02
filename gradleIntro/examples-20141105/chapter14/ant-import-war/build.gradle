@@ -1,0 +1,21 @@
+version = "1.1"
+
+ant.importBuild "build.xml"
+
+task war(type: War, dependsOn: "jar") { // build.xmlのjarターゲットを参照
+    description = "warファイルを作成します"
+
+    baseName = "ant-sample" // warファイルの名前
+    version = project.version // ファイル名に付加されるバージョン
+
+    destinationDir = file("dist")// warファイル出力先
+
+    // warファイル構成
+    from("web") {
+        include("index.html")
+    }
+    classpath("dist/lib/sample-ant-project-0.1.jar")
+    webInf {
+        from ("web/WEB-INF")
+    }
+}

@@ -1,0 +1,12 @@
+// build.gradle
+
+apply plugin: GreetingPlugin // カスタムプラグインを適用
+
+class GreetingPlugin implements Plugin<Project> { // Pluginを実装したカスタムプラグインクラス
+  void apply(Project project) { // このプラグインが適用されたときに呼び出されるメソッド
+    project.task("greet") << { // 適用されたプロジェクトに「greet」タスクを追加
+      println "Hello, world!"
+    }
+  }
+}
+

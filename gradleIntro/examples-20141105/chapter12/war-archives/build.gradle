@@ -1,0 +1,29 @@
+version = 1.0
+
+task myWar(type: War) {
+    // タスクの設定（ファイル出力先など）
+    baseName = "my-war"
+    destinationDir = file("build")
+
+    // アーカイブの構成
+    from("webapp") {
+      include "**/*.html", "**/*.js", "**/*.css"
+    }
+    // ライブラリJARの設定
+    classpath fileTree("lib")
+    // WEB-INFの構成
+    webInf {
+      into("classes") {
+        from ("out") {
+          include "**/*.class"
+        }
+      }
+    }
+
+    webXml file("web.xml")
+
+    manifest {
+     attributes("Built-By": "Gradle", "Implementation-Version": project.version)
+   }
+}
+

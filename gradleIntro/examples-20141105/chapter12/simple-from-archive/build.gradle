@@ -1,0 +1,11 @@
+task docsZip(type: Zip) {
+  // docsディレクトリからアーカイブに含めるファイルを取得する
+  from "docs"
+  // アーカイブするファイルはCSSファイルとHTMLファイル
+  include "**/*.css", "**/*.html"
+  // docs/single.htmlはアーカイブに含めない
+  exclude "single.html"
+  // 空ディレクトリはアーカイブに含めない
+  includeEmptyDirs = false
+}
+

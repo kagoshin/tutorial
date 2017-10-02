@@ -1,0 +1,12 @@
+apply plugin: 'java'
+
+task assemble(overwrite: true) << {
+  println '上書きしました。'
+}
+
+// InvalidUserDataExceptionがスローされます。
+/*
+task assemble(overwrite: false) << {
+  println '上書きしました。'
+}
+*/

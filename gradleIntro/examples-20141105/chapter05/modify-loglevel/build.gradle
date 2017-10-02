@@ -1,0 +1,4 @@
+logging.captureStandardOutput LogLevel.INFO
+logging.captureStandardError LogLevel.INFO
+println '標準出力'
+System.err.println '標準エラー'

@@ -1,0 +1,21 @@
+// ExtraPropertiesExtension
+project.ext.set('property', 'extに追加したプロパティです。')
+
+if(project.ext.has('property')) {
+    println '拡張プロパティの値: ' + project.ext.get('property')
+}
+
+// Groovyのプロパティアクセス
+project.ext.property = 'extに追加したプロパティです。'
+println '拡張プロパティの値: ' + project.property
+
+// Mapリテラル風
+project.ext['property'] = 'extに追加したプロパティです。'
+println '拡張プロパティの値: ' + project.ext['property']
+
+// クロージャを使用した設定
+project.ext {
+    prop1 = 'aaa'
+    prop2 = 'bbb'
+}
+println project.ext.prop1 + project.ext.prop2

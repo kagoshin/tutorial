@@ -1,0 +1,8 @@
+task docsZip(type: Zip) {
+  // <プロジェクトディレクトリ>/project.zip に出力
+  baseName = "project"
+  from ("src/dist") {
+    include "**/*.html", "**/*.css", "**/*.js"
+  }
+}
+

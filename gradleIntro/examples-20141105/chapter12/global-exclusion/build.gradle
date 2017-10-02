@@ -1,0 +1,10 @@
+// デフォルトの除外設定から削除する
+org.apache.tools.ant.DirectoryScanner.removeDefaultExclude("**/.gitignore")
+
+task projectZip(type: Zip) {
+  // プロジェクトディレクトリをアーカイブする
+  from (".")
+  include "**/.gitignore", "**/*.java", "**/*.html"
+  exclude ".gradle"
+}
+
