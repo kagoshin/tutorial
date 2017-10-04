@@ -1,0 +1,1 @@
+INDEX VERSION 1.130+/Users/kagoshin/tutorial/gradleIntro/gradleWorkspace/.metadata/.plugins/org.eclipse.jdt.core
