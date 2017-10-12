@@ -9,5 +9,8 @@
 .project
 .classpath
 .settings
-.metadata
 
+# gradle
+/bin/
+/.gradle/
+/build/
