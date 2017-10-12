@@ -12,3 +12,4 @@
 
 # gradle
 gradleIntro/gradleWorkspace/.metadata/*
+*/.gradle
