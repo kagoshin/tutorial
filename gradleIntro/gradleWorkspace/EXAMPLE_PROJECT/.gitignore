@@ -1,3 +1,16 @@
+# Java
+*.class
+*.jar
+*.war
+*.ear
+!gradle-wrapper.jar
+
+# Eclipse
+.project
+.classpath
+.settings
+
+# gradle
 /bin/
 /.gradle/
 /build/
