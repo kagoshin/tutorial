@@ -15,5 +15,6 @@ echo $total
 # https://qiita.com/koara-local/items/d675485962593359c803
 echo "---ls display2---"
 for var in `ls -1 *.sh`; do
+  # wc -l ${var}
   wc -l $var
 done;
