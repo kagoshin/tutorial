@@ -37,3 +37,26 @@
 
 # ４−５行目と2行目を表示
 # sed -f print.sed str3.txt
+
+# 行頭に「-- 」を追加する
+# cat str4.txt | sed "s/^/--/"
+
+# 行末に「 --」を追加する
+# cat str4.txt | sed "s/$/--/"
+
+# 行頭に「-- 」、行末に「 --」を追加する
+# cat str4.txt | sed "s/.*/-- & --/"
+
+# 各行の最初のaaaを置換
+# cat str4.txt | sed "s/aaa/AAA/"
+
+# 各行の全てのaaaを置換
+# g:各行に含まれる全てのパターンを置き換え
+# cat str4.txt | sed "s/aaa/AAA/g"
+
+# 「aaa」を「AAA」に置換後、置き換えた行だけを出力する
+# -n 出力を抑制する
+# p 出力
+# cat str4.txt | sed -n "s/aaa/AAA/p"
+
+cat str4.txt | sed -n "1,3s/aaa/AAA/pg"
