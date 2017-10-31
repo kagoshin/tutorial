@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 # --共通関数ファイル読込--
-.sample1.fnc
+. sample1.fnc
 
 # 文字列取得
 STR002=`GETSTR 002`
