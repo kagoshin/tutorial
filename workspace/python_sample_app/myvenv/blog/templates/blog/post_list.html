@@ -1,4 +1,19 @@
 <html>
-  <p>Hi there!</p>
-  <p>it Works!</p>
+  <!-- title -->
+  <div>
+    <h1>
+      <a href="/">
+        Djangoサンプル
+      </a>
+    </h1>
+  </div>
+
+  <!-- postの内容 -->
+  {% for post in posts %}
+    <div style="margin-top:50px;">
+      <h2>title:<a href="">{{ post.title }}</a></h2>
+      <p>published: {{ post.published_date }}</p>
+      <p>{{ post.text | linebreaks }}</p>
+    </div>
+  {% endfor %}
 </html>
