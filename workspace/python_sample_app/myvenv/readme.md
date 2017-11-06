@@ -1,5 +1,6 @@
 # URL
 localhost:8000/
+
 http://127.0.0.1:8000/
 
 # DBマイグレーション
@@ -10,6 +11,7 @@ python manage.py runserver
 
 # 管理ページ
 localhost:8000/admin/
+
 http://127.0.0.1:8000/admin/
 
 # superuser
@@ -21,4 +23,5 @@ python manage.py createsuperuser
 
 # django shell
 python3 manage.py shell
+
 exit()
