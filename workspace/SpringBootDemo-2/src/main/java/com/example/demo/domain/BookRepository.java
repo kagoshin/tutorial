@@ -2,17 +2,9 @@ package com.example.demo.domain;
 
 import java.util.List;
 
-public class BookRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
 
-    public List<Book> findAll() {
-        // TODO 自動生成されたメソッド・スタブ
-        return null;
-    }
+public interface BookRepository extends JpaRepository<Book, Long>{
 
-    public List<Book> findBookNameLikeAndTagLike(String string, String string2) {
-        // TODO 自動生成されたメソッド・スタブ
-        return null;
-    }
-
-
+    public List<Book> findBookNameLikeAndTagLike(String bookName, String tag);
 }

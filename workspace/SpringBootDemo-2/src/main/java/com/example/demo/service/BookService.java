@@ -3,11 +3,14 @@ package com.example.demo.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 import com.example.demo.domain.Book;
 import com.example.demo.domain.BookRepository;
 
+@Service
 public class BookService {
 
     @Autowired
@@ -23,4 +26,19 @@ public class BookService {
         }
         return this.bookRepository.findBookNameLikeAndTagLike("%" + bookName + "%", "%" + tag + "%");
     }
+
+    public Book findOne(Long bookId) {
+        return this.bookRepository.findOne(bookId.longValue());
+    }
+
+    @Transactional
+    public Book save(Book book) {
+        return this.bookRepository.save(book);
+    }
+
+    @Transactional
+    public void delete(Book book) {
+        this.bookRepository.delete(book);
+    }
+
 }

@@ -16,5 +16,4 @@ public class SimpleController {
     public String login() {
         return "login";
     }
-
 }
