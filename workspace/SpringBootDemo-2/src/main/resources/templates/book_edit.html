@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.springframework.org/schema/security">
+<head>
+    <th:block th:include="common::head"></th:block>
+    <title>Book</title>
+</head>
+<body>
+    <th:block th:replace="common::header"></th:block>
+
+    <div class="container">
+        <form class="form-horizontal" id="bookForm" method="post" th:action="@{'/book/save'}" th:object="@{bookForm}">
+            <div th:if="${#fields.hasGlobalErrors()}" class="alert alert-danger" role="alert">
+                <p th:each="err : ${fields.globalErrors()}" th:text="${err}"></p>
+            </div>
+
+            <input type="hidden" class="form-control" id="bookId" th:field="*{bookId}" />
+            <div class="form-group">
+                <label class="control-label col-xs-2">* 書籍名</label>
+                <div class="col-xs-5">
+                    <input type="text" class="form-control" id="bookName" th:field="*{bookName}" th:errorclass="fieldError" placeholder="spring boot" />
+                    <span th:if="${#fields.hasErrors('*{bookName}')}" th:errors="*{bookName}" th:errorclass="error-message" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2">タグ</label>
+                <div class="col-xs-5">
+                    <input type="text" class="form-control" id="tag" th:field="*{tag}" th:errorclass="fieldError" placeholder="spring java thymeleaf" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2">リンク</label>
+                <div class="col-xs-5">
+                    <input type="text" class="form-control" id="link" th:field="*{link}" th:errorclass="fieldError" placeholder="http://xxx" />
+                    <span th:if="${#fields.hasErrors('*{link}')}" th:errors="*{link}" th:errorclass="error-message" />
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <th:block th:replace="common::footer"></th:block>
+</body>
+</html>
