@@ -31,8 +31,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
             .formLogin()
                 .loginPage("/login")
                 .usernameParameter("username")
-                .passwordParameter("password").permitAll()
-                .and()
+                .passwordParameter("password").permitAll().and()
             .logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                 .logoutSuccessUrl("/")
@@ -42,7 +41,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 
     @Configuration
     protected static class AuthenticationConfiguration extends GlobalAuthenticationConfigurerAdapter {
-
         @Autowired
         UserService userservice;
 

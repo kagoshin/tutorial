@@ -48,55 +48,23 @@ public class User implements UserDetails{
     }
 
     @Override
-    public String getPassword() {
-        // TODO 自動生成されたメソッド・スタブ
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    @Override
-    public String getUsername() {
-        // TODO 自動生成されたメソッド・スタブ
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    @Override
     public boolean isAccountNonExpired() {
-        // TODO 自動生成されたメソッド・スタブ
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        // TODO 自動生成されたメソッド・スタブ
         return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        // TODO 自動生成されたメソッド・スタブ
         return true;
     }
 
     @Override
     public boolean isEnabled() {
-        // TODO 自動生成されたメソッド・スタブ
         return true;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public Long getUserId() {
@@ -105,5 +73,29 @@ public class User implements UserDetails{
 
     public void setId(Long userId) {
         this.userId = userId;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

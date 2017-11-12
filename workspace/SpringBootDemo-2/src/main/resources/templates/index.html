@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.springframework.org/schema/security">
+<head>
+    <th:block th:include="common::head"></th:block>
+    <title>Top Page</title>
+</head>
+<body>
+    <th:block th:replace="common::header"></th:block>
+
+    <div class="container">
+        <h2>Hello Book !!</h2>
+        <div>
+            <ul>
+                <li class="List-group-item" th:if="${#httpServletRequest.remoteUser == null}"><a href="/book" th:href="@{/book}" class="btn btn-link" id="link">ログイン</a></li>
+                <li class="List-group-item"><a href="/book" th:href="@{/book}" class="btn btn-link" id="link">書籍検索</a></li>
+                <li class="List-group-item" sec:authorize="hasRole('ROLE_ADMIN')"><a href="/book/create" th:href="@{/book/create}" class="btn btn-link" id="link">書籍登録</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <th:block th:replace="common::footer"></th:block>
+</body>
+</html>
