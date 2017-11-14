@@ -55,7 +55,7 @@ public class SalesData {
         calendar.clear();
         calendar.set(2014, 1, 1);
 
-        // 1,000,000日分のデータを作成する
+        // 1,000日分のデータを作成する
         for (int i = 0; i < 1000; i++) {
             Date salesDate = calendar.getTime();
             // 売上金額ごとのデータを作成する
