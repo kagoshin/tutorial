@@ -24,7 +24,7 @@ public class BookService {
         if (StringUtils.isEmpty(bookName) && (StringUtils.isEmpty(tag))) {
             return this.findAll();
         }
-        return this.bookRepository.findBookNameLikeAndTagLike("%" + bookName + "%", "%" + tag + "%");
+        return this.bookRepository.findByBookNameLikeAndTagLike("%" + bookName + "%", "%" + tag + "%");
     }
 
     public Book findOne(Long bookId) {
