@@ -1,4 +1,4 @@
-package enumDemo;
+package effectiveJava.item_030;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,7 +9,7 @@ import java.util.Map;
  * @author kagoshin
  *
  */
-public class enumDemo002 {
+public class Enum001 {
 
     public enum Operation {
         PLUS("+") {
