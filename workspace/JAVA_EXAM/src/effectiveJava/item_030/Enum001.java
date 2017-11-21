@@ -1,12 +1,12 @@
 package effectiveJava.item_030;
 
+
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * enum demo
  * @see Effective Java item:30
- * @author kagoshin
  *
  */
 public class Enum001 {
