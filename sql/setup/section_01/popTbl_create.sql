@@ -1,3 +1,12 @@
+-- create user
+-- https://www.shift-the-oracle.com/config/create-user.html
+-- create table
+-- http://oracle.se-free.com/ddl/A1_cre_tbl.html
+-- データ型
+-- http://www.mitene.or.jp/~rnk/TIPS_ORCL_TBLCREATE.htm
+-- insert
+-- https://www.shift-the-oracle.com/sql/insert.html
+
 create table PopTbl(
   pref_name varchar2(10),
   population number(5)
