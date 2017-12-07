@@ -31,3 +31,15 @@ from greatest;
 --greatest関数
 select key, greatest(greatest(x, y), z) as greatest
 from Greatest;
+
+-- 行もちにしてMAX関数
+select key,
+       max(col) as greatest
+from (
+  select key, x as col from greatest
+  union all
+  select key, y as col from greatest
+  union all
+  select key, z as col from greatest
+) tmp
+group by key;
