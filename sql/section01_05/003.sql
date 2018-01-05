@@ -46,4 +46,4 @@ left outer join tblpop data
 on master.age_class = data.age_class
 and master.sex_cd = data.sex_cd
 group by master.age_class, master.sex_cd
-order by master.age_class, master.sex_cd;
+order by master.age_class asc, master.sex_cd desc;
