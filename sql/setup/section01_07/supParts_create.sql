@@ -18,3 +18,5 @@ insert into supParts values ('E', 'ヒューズ');
 insert into supParts values ('E', 'ナット');
 insert into supParts values ('E', 'パイプ');
 insert into supParts values ('F', 'ヒューズ');
+
+commit;
