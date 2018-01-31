@@ -16,3 +16,5 @@ insert into teams values('ベス', 4, '待機');
 insert into teams values('アレン', 5, '出動中');
 insert into teams values('ロバート', 5, '休暇');
 insert into teams values('ケーガン', 5, '待機');
+
+commit;
