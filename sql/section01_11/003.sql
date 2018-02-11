@@ -17,3 +17,9 @@ select sales_date, sum(quantity)
 from saleshistory
 where sales_date = to_date('2007/10/01')
 group by sales_date;
+
+--中間テーブルを減らす
+select sales_date, max(quantity)
+from saleshistory
+group by sales_date
+having max(quantity) >= 10;
