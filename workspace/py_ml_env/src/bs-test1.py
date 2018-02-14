@@ -10,7 +10,7 @@ html = """
 <body></html>
 """
 
-# HTMLを解析 --- (※3)
+# HTMLを解析する --- (※3)
 soup = BeautifulSoup(html, 'html.parser')
 
 # 任意の部分を抽出する --- (※4)
