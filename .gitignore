@@ -11,3 +11,5 @@
 .settings
 .metadata
 
+# py_ml_env
+py_ml_env/smplSrc/
