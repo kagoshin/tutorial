@@ -1,0 +1,5 @@
+CREATE OR REPLACE PACKAGE cur_pack
+IS
+ TYPE emp_type IS REF CURSOR;
+END;
+/
