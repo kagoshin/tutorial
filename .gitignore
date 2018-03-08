@@ -12,7 +12,7 @@
 .metadata
 
 # sql
-/Users/kagoshin/tutorial/sql/compGuide/setup/*
+sql/compGuide/setup/*
 
 # py_ml_env
 workspace/py_ml_env/smplSrc/
