@@ -12,7 +12,8 @@
 .metadata
 
 # sql
-sql/compGuide/setup/*
+sql/compGuide/setup/
+sql/practicalIntro/codeSample/
 
 # py_ml_env
 workspace/py_ml_env/smplSrc/
