@@ -1,9 +1,9 @@
-create user test001
-identified by "test001"
+create user compGuide
+identified by "compGuide"
 default tablespace users
 temporary tablespace temp
 /
 
-grant dba to test001;
+grant dba to compGuide;
 
-grant unlimited tablespace to test001;
+grant unlimited tablespace to compGuide;
