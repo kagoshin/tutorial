@@ -128,3 +128,34 @@ from address
 union
 select *
 from address2;
+
+select *
+from address
+intersect
+select *
+from address2
+;
+
+select *
+from address
+minus
+select *
+from address2
+;
+
+select address
+      , count(*) over(partition by address)
+from address
+;
+
+select name
+       , age
+       , rank() over(order by age desc) as rnk
+from address
+;
+
+select name
+       , age
+       , dense_rank() over(order by age desc) as dense_rnk
+from address
+;
