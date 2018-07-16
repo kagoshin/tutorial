@@ -76,3 +76,24 @@ right outer join departments d
 on e.dept_id = d.dept_id
 ;
 
+--「図6.5::自己結合を解説するための数字テーブル」を作成
+CREATE TABLE Digits
+(digit INTEGER PRIMARY KEY);
+
+INSERT INTO Digits VALUES(0);
+INSERT INTO Digits VALUES(1);
+INSERT INTO Digits VALUES(2);
+INSERT INTO Digits VALUES(3);
+INSERT INTO Digits VALUES(4);
+INSERT INTO Digits VALUES(5);
+INSERT INTO Digits VALUES(6);
+INSERT INTO Digits VALUES(7);
+INSERT INTO Digits VALUES(8);
+INSERT INTO Digits VALUES(9);
+--commit;
+
+--リスト6.7 自己結合＋クロス結合
+select d1.digit + (d2.digit * 10) as seq
+from digits d1
+cross join digits d2
+;
