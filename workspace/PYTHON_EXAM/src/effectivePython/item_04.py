@@ -6,6 +6,9 @@ from pprint import pprint
 from sys import stdout as STDOUT
 
 # Example 1
+'''
+https://note.nkmk.me/python-urllib-parse-query-string/
+'''
 print('ex1----------')
 from urllib.parse import parse_qs
 my_values = parse_qs('red=5&blue=0&green=',
