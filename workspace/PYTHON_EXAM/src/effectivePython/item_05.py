@@ -52,7 +52,20 @@ print('After    ', b)
 print('No change', a)
 
 # Example 9
+print('ex9----------')
+print('Before ', a)
+a[2:7] = [99, 22, 14]
+print('After ', a)
 
 # Example 10
+print('ex10----------')
+b = a[:]
+assert b == a and b is not a
 
 # Example 11
+print('ex11----------')
+b = a
+print('Before ', a)
+a[:] = [101, 102, 103]
+assert a is b
+print('After ', a)
