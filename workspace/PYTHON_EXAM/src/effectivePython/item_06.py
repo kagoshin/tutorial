@@ -36,5 +36,16 @@ print(a[::2])  # ['a', 'c', 'e', 'g']
 print(a[::-2]) # ['h', 'f', 'd', 'b']
 
 # Example 5
+print('ex5----------')
+a[2::2]     # [c, g, e]
+a[-2::-2]   # [g, e, c, a]
+a[-2:2:-2]  # [g, e]
+a[2:2:-2]   # []
 
 # Example 6
+print('ex6----------')
+b = a[::2]  # [a, c, e, g]
+c = b[1:-1] # [c, e]
+print(a)
+print(b)
+print(c)
