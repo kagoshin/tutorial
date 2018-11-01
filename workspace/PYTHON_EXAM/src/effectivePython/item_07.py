@@ -25,5 +25,14 @@ even_squares = [x**2 for x in a if x % 2 == 0]
 print(even_squares)
 
 # Example 4
+print('ex4----------')
+alt = map(lambda x: x**2, filter(lambda x: x % 2 == 0, a))
+assert even_squares == list(alt)
 
 # Example 5
+print('ex5----------')
+chile_ranks = {'ghost': 1, 'habanero': 2, 'cayenne': 3}
+rank_dict = {rank: name for name, rank in chile_ranks.items()}
+chile_len_set = {len(name) for name in rank_dict.values()}
+print(rank_dict)
+print(chile_len_set)
