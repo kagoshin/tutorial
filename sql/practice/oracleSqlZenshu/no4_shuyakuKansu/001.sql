@@ -1,3 +1,7 @@
+/*
+https://www.oracle.com/technetwork/jp/articles/otnj-sql-image4-1-365357-ja.html
+*/
+
 create table AggSample1 (id, val) as
   select 111, 0 from dual union all
   select 111, 2 from dual union all

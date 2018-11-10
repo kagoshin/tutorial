@@ -20,3 +20,7 @@ workspace/py_ml_env/smplSrc/
 workspace/py_ml_env/src/ch4/mnist/
 workspace/py_ml_env/src/ch4/lang/
 workspace/py_ml_env/src/ch5/mnist/
+
+# PYTHON_EXAM
+## effectivePython
+workspace/PYTHON_EXAM/src/effectivePython/*.txt
