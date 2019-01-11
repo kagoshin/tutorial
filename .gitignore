@@ -22,6 +22,10 @@ workspace/py_ml_env/src/ch4/lang/
 workspace/py_ml_env/src/ch5/mnist/
 workspace/py_ml_env/src/ch6/456_ruby_145.zip
 workspace/py_ml_env/src/ch6/773_ruby_5968.zip
+workspace/py_ml_env/src/ch6/kokoro.model
+workspace/py_ml_env/src/ch6/kokoro.txt.sjis
+workspace/py_ml_env/src/ch6/kokoro.wakati
+workspace/py_ml_env/src/ch6/text
 
 # PYTHON_EXAM
 ## effectivePython
