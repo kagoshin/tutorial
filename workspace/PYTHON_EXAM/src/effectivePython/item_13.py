@@ -42,3 +42,51 @@ try:
 except KeyError:
     pass
     print('expected')
+
+# Example 3
+print('ex3----------')
+import json
+UNDEFINED = object()
+
+def devide_json(path):
+    handle = open(path, 'r+')
+    try:
+        data = handle.read()
+        op = json.loads(data)
+        value = (
+            op['numerator'] /
+            op['denominator']
+        )
+    except ZeroDivisionError as e:
+        return UNDEFINED
+    else:
+        op['result'] = value
+        result = json.dumps(op)
+        handle.seek(0)
+        handle.write(result)
+        return value
+    finally:
+        handle.close()
+
+# Everything works
+temp_path = 'random_data.json'
+handle = open(temp_path, 'w')
+handle.write('{"numerator": 1, "denominator": 10}')
+handle.close()
+assert devide_json(temp_path) == 0.1
+
+# Divide by Zero error
+handle = open(temp_path, 'w')
+handle.write('{"numerator": 1, "denominator": 0}')
+handle.close()
+assert devide_json(temp_path) is UNDEFINED
+
+# JSON decode error
+handle = open(temp_path, 'w')
+handle.write('{"numerator": 1 bad data')
+handle.close()
+try:
+    devide_json(temp_path)
+    assert False
+except ValueError:
+    pass # Expected
