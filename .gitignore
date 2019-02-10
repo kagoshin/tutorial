@@ -30,3 +30,7 @@ workspace/py_ml_env/src/ch6/text
 # PYTHON_EXAM
 ## effectivePython
 workspace/PYTHON_EXAM/src/effectivePython/*.txt
+
+# javaScript
+javaScript/samples_es2018
+javaScript/samples_intro
