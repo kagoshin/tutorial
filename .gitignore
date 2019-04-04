@@ -27,6 +27,7 @@ workspace/py_ml_env/src/ch6/kokoro.txt.sjis
 workspace/py_ml_env/src/ch6/kokoro.wakati
 workspace/py_ml_env/src/ch6/text
 workspace/py_ml_env/src/ch6/__pycache__/*
+workspace/py_ml_env/src/ch6/newstext/*
 
 # PYTHON_EXAM
 ## effectivePython
