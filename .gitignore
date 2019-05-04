@@ -29,6 +29,7 @@ workspace/py_ml_env/src/ch6/text
 workspace/py_ml_env/src/ch6/__pycache__/*
 workspace/py_ml_env/src/ch6/newstext/*
 workspace/py_ml_env/src/ch6/markov-kokoro.json
+workspace/py_ml_env/src/ch6/cgi-bin/__pycache__/*
 workspace/py_ml_env/src/ch6/chatbot-data.json
 
 # PYTHON_EXAM
