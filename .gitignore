@@ -31,6 +31,8 @@ workspace/py_ml_env/src/ch6/newstext/*
 workspace/py_ml_env/src/ch6/markov-kokoro.json
 workspace/py_ml_env/src/ch6/cgi-bin/__pycache__/*
 workspace/py_ml_env/src/ch6/chatbot-data.json
+workspace/py_ml_env/src/ch7/image/101_ObjectCategories/*
+workspace/py_ml_env/src/ch7/image/cache_avhash/*
 
 # PYTHON_EXAM
 ## effectivePython
