@@ -103,7 +103,7 @@ def normalize_defensive(numbers):
 # Example 13
 print('ex13----------')
 visits = [15, 35, 80]
-normalize_defensive(visits)   # No error（配列）
+normalize_defensive(visits)   # No error（リスト）
 visits = ReadVisits(path)
 normalize_defensive(visits)   # No error（コンテナ型）
 
