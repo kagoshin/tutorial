@@ -1,0 +1,31 @@
+# java
+export JAVA_HOME=`/usr/libexec/java_home`
+
+# oracle sqlplus
+export ORACLE_HOME=~/opt/sqlplus/instantclient_12_1
+export PATH=$ORACLE_HOME:$PATH
+export DYLD_LIBRARY_PATH=~/opt/sqlplus/instantclient_12_1
+
+# python
+export PATH="$HOME/.pyenv/shims:$PATH"
+
+# tensorflow
+# suppress warning
+export TF_CPP_MIN_LOG_LEVEL=2
+
+# node.js
+export PATH=$PATH:/Users/kagoshin/.nodebrew/current/bin
+
+# alias
+alias ll='ls -la'
+
+# for_practice
+export BASE_REFERENCE_DIR=/Users/kagoshin/tutorial/shellScript/baseRef
+export TUTORIAL=/Users/kagoshin/tutorial
+export PYMLENV=/Users/kagoshin/tutorial/workspace/py_ml_env/src
+export EFFECTIVEPY=/Users/kagoshin/tutorial/workspace/PYTHON_EXAM/src/effectivePython
+export PYMLEARNGYOMU=/Users/kagoshin/tutorial/workspace/py_mlearn_gyomu/src
+
+# THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/kagoshin/.sdkman"
+[[ -s "/Users/kagoshin/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/kagoshin/.sdkman/bin/sdkman-init.sh"
