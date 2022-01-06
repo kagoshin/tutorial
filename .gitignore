@@ -6,7 +6,7 @@
 !gradle-wrapper.jar
 
 # Eclipse
-# .project
+.project
 .classpath
 .settings
 .metadata
