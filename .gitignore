@@ -6,10 +6,10 @@
 !gradle-wrapper.jar
 
 # Eclipse
-# .project
-# .classpath
-# .settings
-# .metadata
+.project
+.classpath
+.settings
+.metadata
 
 # sql
 sql/compGuide/setup/
