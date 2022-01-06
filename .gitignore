@@ -7,9 +7,9 @@
 
 # Eclipse
 # .project
-# .classpath
-# .settings
-# .metadata
+.classpath
+.settings
+.metadata
 
 # sql
 sql/compGuide/setup/
