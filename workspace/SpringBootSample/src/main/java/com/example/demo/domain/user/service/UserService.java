@@ -19,5 +19,7 @@ public interface UserService {
             String userName);
 
     public void deleteUserOne(String userId);
+    
+    public MUser getLoginUser(String userId);
 
 }
