@@ -25,27 +25,37 @@ public class UserListController {
     @Autowired
     private ModelMapper modelMapper;
 
+    /** ユーザー一覧画面を表示 */
     @GetMapping("/list")
     public String getUserList(@ModelAttribute UserListForm form, Model model) {
 
+        // formをMUserクラスに変換
         MUser user = modelMapper.map(form, MUser.class);
 
+        // ユーザー一覧取得
         List<MUser> userList = userService.getUsers(user);
 
+        // Modelに登録
         model.addAttribute("userList", userList);
 
+        // ユーザー一覧画面を表示
         return "user/list";
     }
 
+    /** ユーザー検索処理 */
     @PostMapping("/list")
     public String postUserList(@ModelAttribute UserListForm form, Model model) {
 
+        // formをMUserクラスに変換
         MUser user = modelMapper.map(form, MUser.class);
 
+        // ユーザー検索
         List<MUser> userList = userService.getUsers(user);
 
+        // Modelに登録
         model.addAttribute("userList", userList);
 
+        // ユーザー一覧画面を表示
         return "user/list";
     }
 }
