@@ -6,20 +6,38 @@ import './index.css';
 // import Name from './components/Name'
 // import Message from './components/Message'
 // import ContainerSample from './components/ContainerSample'
-import ContextSample from './components/ContextSample'
+// import ContextSample from './components/ContextSample'
+// import UseStateSample from './components/UseStateSample'
+// import UseReducerSample from './components/UseReducerSample'
+// import MemoSample1 from './components/MemoSample1'
+// import MemoSample2 from './components/MemoSample2'
+// import UseCallbackSample from './components/UseCallbackSample'
+// import UseMemoSample from './components/UseMemoSample'
+// import UseEffectSample from './components/UseEffectSample'
+// import UseLayoutEffectSample from './components/UseLayoutEffectSample'
+import UseContextSample from './components/UseContextSample'
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    {/* <Hello /> */}
-    {/* <Name /> */}
-    {/* <Message /> */}
-    {/* <ContainerSample /> */}
-    <ContextSample />
-  </React.StrictMode>
+  // <React.StrictMode>
+    // {/* <Hello /> */}
+    // {/* <Name /> */}
+    // {/* <Message /> */}
+    // {/* <ContainerSample /> */}
+    // {/* <ContextSample /> */}
+    // {/* <UseStateSample initialValue={0} /> */}
+    // {/* <UseReducerSample initialValue={0} /> */}
+    // {/* <MemoSample1 /> */}
+    // {/* <MemoSample2 /> */}
+    // {/* <UseCallbackSample /> */}
+    // <UseMemoSample />
+    // <UseEffectSample />
+    // <UseLayoutEffectSample />
+    <UseContextSample />
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
