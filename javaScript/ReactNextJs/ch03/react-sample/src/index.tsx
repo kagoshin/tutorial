@@ -15,7 +15,9 @@ import './index.css';
 // import UseMemoSample from './components/UseMemoSample'
 // import UseEffectSample from './components/UseEffectSample'
 // import UseLayoutEffectSample from './components/UseLayoutEffectSample'
-import UseContextSample from './components/UseContextSample'
+// import UseContextSample from './components/UseContextSample'
+// import UseRefSample from './components/UseRefSample'
+import UseImperativeHandleSample from './components/UseImperativeHandleSample'
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
@@ -36,7 +38,9 @@ root.render(
     // <UseMemoSample />
     // <UseEffectSample />
     // <UseLayoutEffectSample />
-    <UseContextSample />
+    // <UseContextSample />
+    // <UseRefSample />
+    <UseImperativeHandleSample />
   // </React.StrictMode>
 );
 
