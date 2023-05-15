@@ -41,6 +41,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 https://udemy.benesse.co.jp/development/next-js13.html
 
+## 開発サーバ起動
+
+$ npm run dev
+
 ## プロジェクトのビルド・サーバー起動
 $ npm run build
 $ npm run start
