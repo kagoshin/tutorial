@@ -33,6 +33,7 @@
     "@storybook/nextjs": "^7.0.17",
     "@storybook/react": "^7.0.17",
     "@storybook/testing-library": "^0.0.14-next.2",
+    "@types/styled-components": "^5.1.26",
     "eslint-plugin-storybook": "^0.6.12",
     "storybook": "^7.0.17"
   }

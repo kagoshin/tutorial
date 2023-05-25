@@ -42,6 +42,10 @@ npx create-next-app@latest --ts next-sample_02
 npm run build
 npm run start
 
+## styled-componentsインストール
+npm install styled-components@5.3.10
+npm install --save-dev @types/styled-components
+
 ## Storybookインストール
 npx sb@latest init
 
