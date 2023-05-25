@@ -49,3 +49,7 @@ npm run dev
 
 npm run build
 npm run start
+
+## styled-componentsインストール
+
+npm install styled-components@5.3.10
