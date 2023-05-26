@@ -51,3 +51,18 @@ npx sb@latest init
 
 ## Storybook起動
 npm run storybook
+
+## テスト環境構築
+
+### パッケージインストール
+npm install --save-dev jest @testing-library/react @testing-library/jest-dom jest-environment-jsdom
+
+### テスト実行用設定ファイル作成
+jest.setup.js
+jest.config.js
+
+### テスト実行用スクリプト追加
+package.json
+
+### テスト実行
+npm run test
