@@ -23,6 +23,10 @@
         "printWidth": 80,
         "tabWidth": 2
       }
-    ]
+    ],
+    "react/jsx-filename-extension": [
+      "error",
+      { "extensions": [".js", ".jsx", "ts", "tsx"] }
+    ],
   }
 }
