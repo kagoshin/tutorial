@@ -45,9 +45,91 @@ src/ directory > No
 App router > No
 import alias > No
 
+tsconfig.jsonの編集(p.359)
+
+npm run dev
+
 npm run build
 npm run start
 
 ## styled-componentsインストール
 npm install styled-components@5.3.10
 npm install --save-dev @types/styled-components
+
+next.config.js
+pages/_document.tsx
+pages/_app.tsx の編集(p.361)
+
+## ESLint設定
+- typescript-eslint
+- @typescript-eslint/eslint-plugin
+- @typescript-eslint/parser
+- eslint-plugin-prettier
+- eslint-plugin-react
+- eslint-plugin-react-hooks
+- eslint-plugin-import
+
+npm install --save-dev prettier eslint typescript-eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-prettier eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-import
+
+.eslintrc.jsonの編集(p.365)
+
+### lintコマンド
+npm run lint
+→リントを行い、ソースコードの問題を列挙する。
+npm run format
+→ソースコーとの問題を自動でフォーマットを行う。
+
+## Storybookインストール
+npx sb@latest init
+
+## その他プラグインのライブラリ導入
+npm install --save-dev @storybook/addon-postcss tsconfig-paths-webpack-plugin @babel/plugin-proposal-class-properties @babel/plugin-proposal-private-methods @babel/plugin-proposal-private-property-in-object tsconfig-paths-webpack-plugin @mdx-js/react
+
+## Storybook起動
+npm run storybook
+
+## Stroybookアセット配置用フォルダ
+mkdir .storybook/public
+
+.storybook/main.tsの編集(p.372)
+
+## React Hook Form
+npm install react-hook-form
+
+## SWR
+npm install swr
+
+## React Content Loader
+npm install react-content-loader
+npm install --save-dev @types/react-content-loader
+
+## Material Icons
+npm install @mui/material @mui/icons-material @emotion/react @emotion/styled
+
+## 環境変数
+.env
+
+## テスト環境構築
+
+### パッケージインストール
+npm install --save-dev @testing-library/jest-dom @testing-library/react jest jest-environment-jsdom
+
+### テスト実行用設定ファイル作成
+jest.setup.js
+jest.config.js
+
+### テスト実行用スクリプト追加
+package.json
+
+### テスト実行
+npm run test
+
+## JSON Server
+git clone https://github.com/gihyo-book/ts-nextbook-json
+cd ts-nextbook-json
+npm ci
+npm start
+
+### cURL 動作確認
+curl -X GET -i http://localhost:8000/users
+
