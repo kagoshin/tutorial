@@ -1,4 +1,4 @@
-package effectiveJava.item_030;
+package effectiveJava.ch06.item_030;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package effectiveJava.item_046;
+package effectiveJava.ch08.item_046;
 
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package effectiveJava.item_001;
+package effectiveJava.ch02.item_001;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
