@@ -1,0 +1,20 @@
+yum localinstall https://dev.mysql.com/get/mysql80-community-release-el7-5.noarch.rpm -y
+
+yum install http://mirror.centos.org/centos/8-stream/AppStream/x86_64/os/Packages/compat-openssl10-1.0.2o-3.el8.x86_64.rpm
+
+yum install mysql-community-server -y 
+
+systemctl start mysqld
+
+systemctl enable mysqld
+
+cat /var/log/mysqld.log | grep localhost
+
+mysql –u root -p
+
+ALTER USER root@localhost IDENTIFIED BY ‘パスワード’;
+
+create database udemy;
+
+show databases;
+

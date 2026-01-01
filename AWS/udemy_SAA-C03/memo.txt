@@ -1,0 +1,24 @@
+# ec2 access
+## 初期設定 
+mv ~/Downloads/udemysample.pem ~/.ssh/
+chmod 400 ~/.ssh/udemysample.pem
+## 接続
+ssh -i ~/.ssh/udemysample.pem ec2-user@XXX(public ip address)
+
+ssh -i ~/.ssh/udemysample.pem ec2-user@13.114.33.181
+ssh -i ~/.ssh/udemysample.pem ec2-user@52.192.1.62
+ssh ec2-user@10.0.1.92 -i myprivatekey.pem
+
+ssh -i ~/.ssh/udemysample.pem ec2-user@52.194.210.23
+ssh ec2-user@10.0.1.196 -i myprivatekey.pem
+
+ssh -i ~/.ssh/udemysample.pem ec2-user@54.168.231.167
+ssh -i ~/.ssh/udemysample.pem ec2-user@13.115.230.36
+ssh -i ~/.ssh/udemysample.pem ec2-user@43.206.210.217
+18.139.225.157
+
+# IAMユーザ
+Engineer1
+Bgt56yhn
+https://175303020931.signin.aws.amazon.com/console
+
