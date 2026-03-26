@@ -1,0 +1,12 @@
+
+#Redisクライアントのインストール
+sudo amazon-linux-extras install redis4.0
+
+#Redisへの接続
+redis-cli -c -h エンドポイント名をコピー -p 6379
+
+#データを登録する
+set test KentaSato
+
+#データを取得する
+get test

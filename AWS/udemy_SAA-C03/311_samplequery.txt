@@ -1,0 +1,5 @@
+select eventname, count(salesid) totalorders, sum(pricepaid) totalsales
+from sales, event
+where sales.eventid=event.eventid
+group by eventname
+order by 3;
