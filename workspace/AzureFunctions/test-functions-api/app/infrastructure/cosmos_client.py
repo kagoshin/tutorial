@@ -9,8 +9,9 @@ from app.core.config import Settings
 class CosmosRepository:
     """CosmosDBの単一コンテナに対する汎用CRUDリポジトリ。"""
 
-    def __init__(self, settings: Settings):
+    def __init__(self, settings: Settings, container_name: Optional[str] = None):
         self._settings = settings
+        self._container_name = container_name or settings.cosmos_container
         self._client: Optional[CosmosClient] = None
         self._container: Optional[ContainerProxy] = None
 
@@ -20,12 +21,13 @@ class CosmosRepository:
                 self._client = CosmosClient(
                     url=self._settings.cosmos_endpoint,
                     credential=self._settings.cosmos_key,
+                    connection_verify=self._settings.cosmos_connection_verify,
                 )
             database = self._client.create_database_if_not_exists(
                 id=self._settings.cosmos_database
             )
             self._container = database.create_container_if_not_exists(
-                id=self._settings.cosmos_container,
+                id=self._container_name,
                 partition_key=PartitionKey(path="/id"),
             )
         return self._container

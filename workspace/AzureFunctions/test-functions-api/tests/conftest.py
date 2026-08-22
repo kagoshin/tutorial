@@ -3,9 +3,10 @@ from typing import Iterable, Optional
 import pytest
 from fastapi.testclient import TestClient
 
-from app.api.deps import get_item_service
+from app.api.deps import get_account_service, get_item_service
 from app.core.auth import get_current_user
 from app.main import app as fastapi_app
+from app.services.account_service import AccountService
 from app.services.item_service import ItemService
 
 
@@ -39,8 +40,19 @@ def fake_repository() -> FakeCosmosRepository:
 
 
 @pytest.fixture
-def client(fake_repository: FakeCosmosRepository) -> Iterable[TestClient]:
+def fake_account_repository() -> FakeCosmosRepository:
+    return FakeCosmosRepository()
+
+
+@pytest.fixture
+def client(
+    fake_repository: FakeCosmosRepository,
+    fake_account_repository: FakeCosmosRepository,
+) -> Iterable[TestClient]:
     fastapi_app.dependency_overrides[get_item_service] = lambda: ItemService(fake_repository)
+    fastapi_app.dependency_overrides[get_account_service] = lambda: AccountService(
+        fake_account_repository
+    )
     fastapi_app.dependency_overrides[get_current_user] = lambda: {"sub": "test-user"}
     with TestClient(fastapi_app) as test_client:
         yield test_client

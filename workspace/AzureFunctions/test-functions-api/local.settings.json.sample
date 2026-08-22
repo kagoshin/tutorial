@@ -8,6 +8,7 @@
     "COSMOS_KEY": "<your-cosmos-primary-key>",
     "COSMOS_DATABASE": "AppDatabase",
     "COSMOS_CONTAINER": "Items",
+    "COSMOS_ACCOUNT_CONTAINER": "AccountInfo",
 
     "ENTRA_TENANT_SUBDOMAIN": "<your-tenant-subdomain>",
     "ENTRA_TENANT_ID": "<your-tenant-id>",

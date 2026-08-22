@@ -13,6 +13,8 @@ class Settings(BaseSettings):
     cosmos_key: str = ""
     cosmos_database: str = "AppDatabase"
     cosmos_container: str = "Items"
+    cosmos_account_container: str = "AccountInfo"
+    cosmos_connection_verify: bool = True  # ローカルエミュレータ利用時のみFalseにする
 
     # Entra External ID（APIを保護するトークン検証用）
     entra_tenant_subdomain: str = ""
