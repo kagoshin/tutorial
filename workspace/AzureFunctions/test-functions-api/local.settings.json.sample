@@ -1,0 +1,22 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+
+    "COSMOS_ENDPOINT": "https://<your-cosmos-account>.documents.azure.com:443/",
+    "COSMOS_KEY": "<your-cosmos-primary-key>",
+    "COSMOS_DATABASE": "AppDatabase",
+    "COSMOS_CONTAINER": "Items",
+
+    "ENTRA_TENANT_SUBDOMAIN": "<your-tenant-subdomain>",
+    "ENTRA_TENANT_ID": "<your-tenant-id>",
+    "ENTRA_CLIENT_ID": "<api-app-registration-client-id>",
+    "ENTRA_USER_FLOW": "<your-user-flow-name>",
+
+    "GRAPH_TENANT_ID": "<your-tenant-id>",
+    "GRAPH_CLIENT_ID": "<graph-app-registration-client-id>",
+    "GRAPH_CLIENT_SECRET": "<graph-app-registration-client-secret>",
+    "GRAPH_SENDER_UPN": "notifications@yourdomain.onmicrosoft.com"
+  }
+}
